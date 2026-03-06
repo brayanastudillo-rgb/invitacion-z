@@ -2,136 +2,70 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Invitación Especial</title>
+<title>Invitación Baby Shower</title>
 
 <style>
 
 body{
 margin:0;
-font-family: 'Segoe UI', sans-serif;
-background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-color:white;
+font-family:Arial;
+background:linear-gradient(135deg,#ffd6ec,#ffeaf5);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
 text-align:center;
-overflow-x:hidden;
 }
 
-.container{
-padding:40px;
-}
-
-h1{
-font-size:50px;
-margin-bottom:10px;
-animation:fadeDown 2s;
-}
-
-p{
-font-size:20px;
-margin-bottom:30px;
-animation:fadeDown 3s;
-}
-
-img{
-width:90%;
-max-width:600px;
+.tarjeta{
+background:white;
+padding:30px;
 border-radius:20px;
-box-shadow:0 20px 40px rgba(0,0,0,0.6);
-margin-top:20px;
-animation:zoom 2s;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
-video{
-width:90%;
-max-width:600px;
-border-radius:20px;
-margin-top:30px;
-box-shadow:0 20px 40px rgba(0,0,0,0.6);
+.tarjeta img{
+max-width:100%;
+border-radius:15px;
 }
 
-button{
-background:#ff4b2b;
-background:linear-gradient(45deg,#ff416c,#ff4b2b);
-border:none;
+.boton{
+margin-top:25px;
 padding:15px 35px;
-font-size:20px;
+background:#ff69b4;
 color:white;
-border-radius:30px;
+font-size:20px;
+border:none;
+border-radius:40px;
 cursor:pointer;
-margin-top:30px;
 transition:0.3s;
 }
 
-button:hover{
-transform:scale(1.1);
-box-shadow:0 10px 25px rgba(0,0,0,0.4);
-}
-
-@keyframes fadeDown{
-from{
-opacity:0;
-transform:translateY(-40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-@keyframes zoom{
-from{
-transform:scale(0.8);
-opacity:0;
-}
-to{
-transform:scale(1);
-opacity:1;
-}
-}
-
-footer{
-margin-top:60px;
-font-size:14px;
-opacity:0.7;
+.boton:hover{
+background:#ff4fa3;
+transform:scale(1.05);
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
+<div class="tarjeta">
 
-<h1>✨ Invitación Especial ✨</h1>
-
-<p>Tenemos algo muy especial para ti</p>
-
-<img src="Invitacion.png" alt="Invitación">
+<img src="Invitacion.png">
 
 <br>
 
-<video controls autoplay loop>
-<source src="video.mp4" type="video/mp4">
-Tu navegador no soporta video.
-</video>
-
-<br>
-
-<button onclick="mostrarMensaje()">Confirmar asistencia</button>
-
-<p id="mensaje"></p>
-
-<footer>
-Hecho con ❤️
-</footer>
+<button class="boton" onclick="abrir()">Abrir Invitación</button>
 
 </div>
 
 <script>
 
-function mostrarMensaje(){
-document.getElementById("mensaje").innerHTML="🎉 ¡Gracias por confirmar tu asistencia!";
+function abrir(){
+window.location.href="video.html"
 }
 
 </script>
