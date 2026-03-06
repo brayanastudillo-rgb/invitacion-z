@@ -1,120 +1,137 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Baby Shower Zoe</title>
+<title>Invitación Especial</title>
 
 <style>
 
 body{
 margin:0;
-font-family:Arial;
-background:#ffeaf4;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
+font-family: 'Segoe UI', sans-serif;
+background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
 text-align:center;
+overflow-x:hidden;
 }
 
-.tarjeta{
-max-width:700px;
-width:90%;
+.container{
+padding:40px;
+}
+
+h1{
+font-size:50px;
+margin-bottom:10px;
+animation:fadeDown 2s;
+}
+
+p{
+font-size:20px;
+margin-bottom:30px;
+animation:fadeDown 3s;
 }
 
 img{
-width:100%;
+width:90%;
+max-width:600px;
 border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,0.6);
+margin-top:20px;
+animation:zoom 2s;
+}
+
+video{
+width:90%;
+max-width:600px;
+border-radius:20px;
+margin-top:30px;
+box-shadow:0 20px 40px rgba(0,0,0,0.6);
 }
 
 button{
-margin-top:25px;
-padding:18px 40px;
-font-size:22px;
+background:#ff4b2b;
+background:linear-gradient(45deg,#ff416c,#ff4b2b);
 border:none;
-border-radius:40px;
-background:#ff6ec7;
-color:white;
-cursor:pointer;
-animation:pulse 1.6s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.08);}
-100%{transform:scale(1);}
-}
-
-#video{
-display:none;
-margin-top:20px;
-}
-
-#info{
-display:none;
-margin-top:20px;
+padding:15px 35px;
 font-size:20px;
+color:white;
+border-radius:30px;
+cursor:pointer;
+margin-top:30px;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+@keyframes fadeDown{
+from{
+opacity:0;
+transform:translateY(-40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes zoom{
+from{
+transform:scale(0.8);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+footer{
+margin-top:60px;
+font-size:14px;
+opacity:0.7;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="tarjeta">
+<div class="container">
 
-<img src="https://drive.google.com/uc?export=view&id=1KdJMQXEzyWoDD4LUJ4WPbpsJRHX1nt-O">
+<h1>✨ Invitación Especial ✨</h1>
 
-<button onclick="abrirInvitacion()">Abrir invitación</button>
+<p>Tenemos algo muy especial para ti</p>
 
-<div id="video">
+<img src="Invitacion.png" alt="Invitación">
 
-<video id="videoZoe" width="100%" controls>
+<br>
 
-<source src="https://drive.google.com/uc?export=download&id=1cfO3FB4dx7uVtwGtwkv6IHxdelKCnRVs" type="video/mp4">
-
+<video controls autoplay loop>
+<source src="video.mp4" type="video/mp4">
+Tu navegador no soporta video.
 </video>
 
-</div>
+<br>
 
-<div id="info">
+<button onclick="mostrarMensaje()">Confirmar asistencia</button>
 
-<h2>Baby Shower Zoe Amaranta</h2>
+<p id="mensaje"></p>
 
-<p>19 de abril – 3:00 PM</p>
-
-<p>Barrio La Cita</p>
-
-<p>Cra. 6c #171-2 a 171-68</p>
-
-<p>Bogotá</p>
-
-</div>
+<footer>
+Hecho con ❤️
+</footer>
 
 </div>
 
 <script>
 
-function abrirInvitacion(){
-
-document.querySelector("button").style.display="none"
-
-document.getElementById("video").style.display="block"
-
-var v=document.getElementById("videoZoe")
-
-v.play()
-
-v.onended=function(){
-
-document.getElementById("info").style.display="block"
-
-}
-
+function mostrarMensaje(){
+document.getElementById("mensaje").innerHTML="🎉 ¡Gracias por confirmar tu asistencia!";
 }
 
 </script>
